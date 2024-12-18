@@ -1,0 +1,43 @@
+package com.Automobileapplication.Manufacturerservice.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Automobileapplication.Manufacturerservice.entity.Manufacturer;
+import com.Automobileapplication.Manufacturerservice.repo.ManufacturerRepository;
+
+
+@Service
+public class ManufacturerService {
+    @Autowired
+    private ManufacturerRepository manufacturerRepository;
+
+    public List<Manufacturer> getAllManufacturers() {
+        return manufacturerRepository.findAll();
+    }
+
+    public Manufacturer getManufacturerById(Long id) {
+        return manufacturerRepository.findById(id).orElse(null);
+    }
+
+    public Manufacturer createManufacturer(Manufacturer manufacturer) {
+        return manufacturerRepository.save(manufacturer);
+    }
+
+    public Manufacturer updateManufacturer(Long id, Manufacturer updatedManufacturer) {
+        Manufacturer manufacturer = manufacturerRepository.findById(id).orElse(null);
+        if (manufacturer != null) {
+            manufacturer.setName(updatedManufacturer.getName());
+            manufacturer.setCountry(updatedManufacturer.getCountry());
+            return manufacturerRepository.save(manufacturer);
+        }
+        return null;
+    }
+
+    public void deleteManufacturer(Long id) {
+        manufacturerRepository.deleteById(id);
+    }
+
+}

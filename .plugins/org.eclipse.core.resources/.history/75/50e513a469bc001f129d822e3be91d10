@@ -1,0 +1,11 @@
+package com.pgManagement.pgManagementRepo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.pgManagement.pgManagementEntity.OwnerEntity;
+
+@Repository
+public interface OwnerRepo extends JpaRepository<OwnerEntity, Long> {
+
+}

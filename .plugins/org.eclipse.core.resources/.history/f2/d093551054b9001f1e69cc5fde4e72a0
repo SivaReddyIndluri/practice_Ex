@@ -1,0 +1,48 @@
+package com.Automobileapplication.Maintenanceservice.service;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Automobileapplication.Maintenanceservice.entity.Maintenance;
+import com.Automobileapplication.Maintenanceservice.repo.MaintenenceRepository;
+
+@Service
+public class MaintenanceService {
+
+    @Autowired
+    private MaintenenceRepository maintenanceRepository;
+
+    // Get all maintenance records
+    public List<Maintenance> getAllMaintenanceRecords() {
+        return maintenanceRepository.findAll();
+    }
+
+    // Get maintenance records by automobile ID
+    public List<Maintenance> getMaintenanceByAutomobileId(Long automobileId) {
+        return maintenanceRepository.findByAutomobileId(automobileId);
+    }
+
+    // Create a new maintenance record
+    public Maintenance createMaintenance(Maintenance maintenance) {
+        return maintenanceRepository.save(maintenance);
+    }
+
+    // Update a maintenance record
+    public Maintenance updateMaintenance(Long id, Maintenance updatedMaintenance) {
+        Maintenance existingMaintenance = maintenanceRepository.findById(id).orElse(null);
+        if (existingMaintenance != null) {
+            existingMaintenance.setDate(updatedMaintenance.getDate());
+            existingMaintenance.setDescription(updatedMaintenance.getDescription());
+            existingMaintenance.setAutomobileId(updatedMaintenance.getAutomobileId());
+            return maintenanceRepository.save(existingMaintenance);
+        }
+        return null;
+    }
+
+    // Delete a maintenance record
+    public void deleteMaintenance(Long id) {
+        maintenanceRepository.deleteById(id);
+    }
+
+}

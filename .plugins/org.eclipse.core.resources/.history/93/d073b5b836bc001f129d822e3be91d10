@@ -1,0 +1,15 @@
+package com.pgManagement.pgManagementEntity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "owner_entity")
+public class OwnerEntity {
+	
+	private long id ;
+	private String ownerName;
+	private String ownerEmail;
+	private String ownerPhoneNum;
+
+}

@@ -1,0 +1,19 @@
+package config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+public class RolesAndRes {
+	
+	
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+		httpSecurity.csrf().disable().
+		authorizeHttpRequests().requestMatchers("/api/employee").permitAll().
+		anyRequest().authenticated().and().formLogin();
+		return httpSecurity.build();
+		
+	}
+
+}

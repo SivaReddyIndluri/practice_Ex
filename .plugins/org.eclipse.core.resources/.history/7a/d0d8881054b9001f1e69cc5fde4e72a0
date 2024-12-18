@@ -1,0 +1,12 @@
+package com.Automobileapplication.Inventoryservice.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.Automobileapplication.Inventoryservice.entity.Inventory;
+
+@Repository
+public interface InventoryRepository extends JpaRepository<Inventory, Long> {
+
+    Inventory findByAutomobileId(Long automobileId);
+}

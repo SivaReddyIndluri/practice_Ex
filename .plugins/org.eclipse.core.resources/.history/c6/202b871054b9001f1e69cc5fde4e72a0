@@ -1,0 +1,54 @@
+package com.Automobileapplication.Inventoryservice.controller;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Automobileapplication.Inventoryservice.entity.Inventory;
+import com.Automobileapplication.Inventoryservice.service.InventoryService;
+
+@RestController
+@RequestMapping("/inventory")
+public class InventoryController {
+
+    @Autowired
+    private InventoryService inventoryService;
+
+    @GetMapping
+    public List<Inventory> getAllInventories() {
+        return inventoryService.getAllInventories();
+    }
+
+    @GetMapping("/automobile/{automobileId}")
+    public Inventory getInventoryByAutomobileId(@PathVariable Long automobileId) {
+        return inventoryService.getInventoryByAutomobileId(automobileId);
+    }
+
+    @GetMapping("/total-quantity")
+    public int getTotalInventoryQuantity() {
+        return inventoryService.getTotalQuantity();
+    }
+
+    @PostMapping
+    public Inventory createInventory(@RequestBody Inventory inventory) {
+        return inventoryService.createInventory(inventory);
+    }
+
+    @PutMapping("/{id}")
+    public Inventory updateInventory(@PathVariable Long id, @RequestBody Inventory inventory) {
+        return inventoryService.updateInventory(id, inventory);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteInventory(@PathVariable Long id) {
+        inventoryService.deleteInventory(id);
+    }
+
+}

@@ -1,0 +1,40 @@
+package com.Automobileapplication.Orderservice.service;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Automobileapplication.Orderservice.entity.Order;
+import com.Automobileapplication.Orderservice.repo.OrderRepository;
+
+@Service
+public class OrderService {
+    @Autowired
+    private OrderRepository orderRepository;
+
+    // Get all orders
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll();
+    }
+
+    // Get order by ID
+    public Order getOrderById(Long id) {
+        return orderRepository.findById(id).orElse(null);
+    }
+
+    // Create a new order
+    public Order createOrder(Order order) {
+        return orderRepository.save(order);
+    }
+
+    // List orders by customer
+    public List<Order> getOrdersByCustomer(Long customerId) {
+        return orderRepository.findByCustomerId(customerId);
+    }
+
+    // Delete an order
+    public void deleteOrder(Long id) {
+        orderRepository.deleteById(id);
+    }
+
+}

@@ -1,0 +1,5 @@
+package com.pgManagement.pgManagementEntity;
+
+public class OwnerEntity {
+
+}

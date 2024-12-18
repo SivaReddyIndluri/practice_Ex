@@ -1,0 +1,11 @@
+package strings;
+
+public class StringReplace {
+	
+	public void m1() {
+		String str = "SivaReddy";
+		 str.replace("S", "");
+		System.out.println(str);
+	}
+
+}

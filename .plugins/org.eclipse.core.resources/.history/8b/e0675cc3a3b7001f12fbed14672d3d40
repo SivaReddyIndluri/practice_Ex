@@ -1,0 +1,21 @@
+package pallyTechPractice;
+//Take an array of numbers and print the position of a given element x. If element is not
+//available print “element not available”.
+public class ArrayElement {
+	public static void m1() {
+		int[] arr = {12,54,23,65,9};
+		int pos = 65;
+		for(int i =0; i<=arr.length; i++) {
+			if(arr[i] == pos) {
+				System.out.println("element found at"+ i);
+				break;
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		ArrayElement.m1();
+		
+	}
+
+}

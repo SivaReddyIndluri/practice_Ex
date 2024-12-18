@@ -1,0 +1,65 @@
+package com.Automobileapplication.Automobileservice.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Automobileapplication.Automobileservice.entity.Automobile;
+import com.Automobileapplication.Automobileservice.service.AutomobileService;
+
+
+
+@RestController
+@RequestMapping("/automobiles")
+public class AutomobileController {
+    
+    @Autowired
+    private AutomobileService automobileService;
+
+    @GetMapping
+    public List<Automobile> getAllAutomobiles() {
+        return automobileService.getAllAutomobiles();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<Automobile>> getAutomobileById(@PathVariable Long id) {
+        Optional<Automobile> automobile = automobileService.getAutomobileById(id);
+        if (automobile == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(automobile);
+    }
+
+    @PostMapping
+    public Automobile createAutomobile(@RequestBody Automobile automobile) {
+        return automobileService.saveAutomobile(automobile);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Automobile> updateAutomobile(@PathVariable Long id, @RequestBody Automobile automobile) {
+        Automobile updatedAutomobile = automobileService.saveAutomobile(automobile);
+        if (updatedAutomobile == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(updatedAutomobile);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteAutomobile(@PathVariable Long id) {
+        automobileService.deleteAutomobile(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    
+}
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\Siva\sivarepo"/>
+			<item value="C:\Users\Siva\Desktop\Siva_backend\MVPInfoTechEmployeeManagementBE"/>
+			<item value="C:\Users\Siva\siva_backend"/>
+			<item value="C:\Users\Siva\Desktop\project\simpleProject\new_project\simpleproject1"/>
+			<item value="C:\Users\Siva\Desktop\firstpro\simpleProject"/>
+			<item value="C:\Users\Siva\Desktop\newcode\simpleProject"/>
+			<item value="C:\Users\Siva\Desktop\project\simpleProject"/>
+			<item value="C:\Users\Siva\Desktop\codebase\simpleProject"/>
+			<item value="C:\Users\Siva\Desktop\project"/>
+			<item value="C:\Users\Siva\Downloads\demo\demo"/>
+			<item value="C:\Users\Siva\Downloads\project"/>
+			<item value="C:\Users\Siva\Desktop\Project"/>
+			<item value="C:\Users\Siva\Desktop\FlightManagement"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

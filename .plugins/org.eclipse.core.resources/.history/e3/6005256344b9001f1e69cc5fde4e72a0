@@ -1,0 +1,44 @@
+package simpleProject.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+
+public class Employee {
+	
+	private Long empId;
+	@NotEmpty(message = "Employe address should not be empty:")
+	private String empName;
+	
+	@NotBlank(message = "Employe location should not be blank:")
+	private String empAddress;
+	
+	@NotBlank(message = "Employe Employee mother name should not be blank:")
+	private String empLocation;
+	
+	
+	public Long getEmpId() {
+		return empId;
+	}
+	public void setEmpId(Long empId) {
+		this.empId = empId;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+	public String getEmpAddress() {
+		return empAddress;
+	}
+	public void setEmpAddress(String empAddress) {
+		this.empAddress = empAddress;
+	}
+	public String getEmpLocation() {
+		return empLocation;
+	}
+	public void setEmpLocation(String empLocation) {
+		this.empLocation = empLocation;
+	}
+	
+}

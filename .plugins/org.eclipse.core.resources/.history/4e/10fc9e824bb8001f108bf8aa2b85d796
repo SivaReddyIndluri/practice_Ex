@@ -1,0 +1,20 @@
+package codingPractice;
+
+public class LamdaEmImpl {
+	
+	public void m2() {
+		
+	  LamdaEx ex  =	(a,b)->{
+		  int c  = a +b;
+			System.out.println("lamda Expression without parameters" );
+		};
+		ex.m1(12,34);
+	}
+
+	public static void main(String[] args) {
+		LamdaEmImpl lf = new LamdaEmImpl();
+		lf.m2();
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.Automobileapplication.Automobileservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AutomobileserviceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AutomobileserviceApplication.class, args);
+	}
+
+}

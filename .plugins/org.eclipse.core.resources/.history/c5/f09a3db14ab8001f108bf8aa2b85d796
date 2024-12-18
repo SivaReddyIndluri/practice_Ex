@@ -1,0 +1,15 @@
+package codingPractice;
+
+public class LamdaEmImpl {
+	
+	public void m2() {
+		
+	}
+
+	public static void main(String[] args) {
+		LamdaEmImpl lf = new LamdaEmImpl();
+		lf.m2();
+
+	}
+
+}

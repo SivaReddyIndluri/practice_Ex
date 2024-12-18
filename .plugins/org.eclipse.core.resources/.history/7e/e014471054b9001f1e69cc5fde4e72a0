@@ -1,0 +1,64 @@
+package com.Automobileapplication.Customerservice.service;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Automobileapplication.Customerservice.entity.Customer;
+import com.Automobileapplication.Customerservice.repo.CustomerRepository;
+
+import jakarta.persistence.criteria.Order;
+
+// import jakarta.persistence.criteria.Order;
+
+@Service
+public class CustomerService {
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    // @Autowired
+    // private OrderRepository orderRepository;
+
+    // Get all customers
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
+    }
+
+    // Get customer by ID
+    public Customer getCustomerById(Long id) {
+        return customerRepository.findById(id).orElse(null);
+    }
+
+    // Create a new customer
+    public Customer createCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
+
+    // Update existing customer
+    public Customer updateCustomer(Long id, Customer updatedCustomer) {
+        Customer existingCustomer = customerRepository.findById(id).orElse(null);
+        if (existingCustomer != null) {
+            existingCustomer.setName(updatedCustomer.getName());
+            existingCustomer.setEmail(updatedCustomer.getEmail());
+            existingCustomer.setPhone(updatedCustomer.getPhone());
+            return customerRepository.save(existingCustomer);
+        }
+        return null;
+    }
+
+    // Delete a customer
+    public void deleteCustomer(Long id) {
+        customerRepository.deleteById(id);
+    }
+
+    public List<Order> getOrdersByCustomer(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getOrdersByCustomer'");
+    }
+
+    // List orders placed by a customer
+    // public List<Order> getOrdersByCustomer(Long customerId) {
+    //     return orderRepository.findByCustomerId(customerId);
+    // }
+
+}

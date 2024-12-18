@@ -1,0 +1,34 @@
+package com.Automobileapplication.Automobileservice.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Automobileapplication.Automobileservice.entity.Automobile;
+import com.Automobileapplication.Automobileservice.repo.AutomobileRepository;
+
+
+@Service
+public class AutomobileService {
+
+    @Autowired
+    private AutomobileRepository automobileRepository;
+
+    public List<Automobile> getAllAutomobiles() {
+        return automobileRepository.findAll();
+    }
+
+    public Optional<Automobile> getAutomobileById(Long id) {
+        return automobileRepository.findById(id);
+    }
+
+    public Automobile saveAutomobile(Automobile automobile) {
+        return automobileRepository.save(automobile);
+    }
+
+    public void deleteAutomobile(Long id) {
+        automobileRepository.deleteById(id);
+    }
+}

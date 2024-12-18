@@ -1,0 +1,36 @@
+package com.Automobileapplication.Maintenanceservice.controller;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Automobileapplication.Maintenanceservice.entity.Maintenance;
+import com.Automobileapplication.Maintenanceservice.service.MaintenanceService;
+
+@RestController
+@RequestMapping("/maintenance")
+public class MaintenanceController {
+    @Autowired
+    private MaintenanceService maintenanceService;
+
+    @GetMapping
+    public List<Maintenance> getAllMaintenanceRecords() {
+        return maintenanceService.getAllMaintenanceRecords();
+    }
+
+    @PostMapping
+    public Maintenance createMaintenance(@RequestBody Maintenance maintenance) {
+        return maintenanceService.createMaintenance(maintenance);
+    }
+
+    @GetMapping("/automobile/{automobileId}")
+    public List<Maintenance> getMaintenanceByAutomobileId(@PathVariable Long automobileId) {
+        return maintenanceService.getMaintenanceByAutomobileId(automobileId);
+    }
+
+}

@@ -1,0 +1,19 @@
+import java.util.Optional;
+
+public  class AbstactClass {
+	
+	public void m1() {
+		String s = "";
+		 Optional<?> ss =  Optional.ofNullable(s);
+		 if(ss.isPresent()) 
+			 System.out.println("Value is presented in Optional class");
+		  else
+			 System.out.println("value is not presented :");
+	}
+
+	public static void main(String[] args) {
+		AbstactClass ff = new AbstactClass();
+		ff.m1();
+	}
+
+}

@@ -1,0 +1,52 @@
+package simpleProject.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import simpleProject.dto.Employee;
+import simpleProject.entity.EmployeeEntity;
+import simpleProject.repositary.EmpRepositary;
+
+@Service
+public class EmpServiceImpl implements EmpService {
+	
+	@Autowired
+	public EmpRepositary empRepo;
+
+	@Override
+	public String createEmp(Employee employee) {
+		EmployeeEntity emp = new EmployeeEntity();
+		///Employee emps = new Employee();
+		emp.setEmpAddress(employee.getEmpAddress());
+		emp.setEmpLocation(employee.getEmpLocation());
+		emp.setEmpId(employee.getEmpId());
+		emp.setEmpName(employee.getEmpName());
+
+		return "Employee details is created pls check";
+	}
+
+	@Override
+	public Employee getid(Long id) {
+		
+		return null;
+	}
+
+	@Override
+	public EmployeeEntity findAll() {
+		
+		return null;
+	}
+
+	@Override
+	public Employee updateEmpDetails(Employee employeeUpdate, Long id) {
+		
+		return null;
+	}
+
+	@Override
+	public String deleteId(long Id) {
+		
+		return null;
+	}
+
+}

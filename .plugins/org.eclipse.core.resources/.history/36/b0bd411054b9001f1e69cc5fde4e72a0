@@ -1,0 +1,13 @@
+package com.Automobileapplication.Automobileservice;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class AutomobileserviceApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

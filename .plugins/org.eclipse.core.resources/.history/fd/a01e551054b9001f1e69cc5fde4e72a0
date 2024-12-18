@@ -1,0 +1,13 @@
+package com.Automobileapplication.Maintenanceservice.repo;
+
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.Automobileapplication.Maintenanceservice.entity.Maintenance;
+
+@Repository
+public interface MaintenenceRepository extends JpaRepository<Maintenance, Long> {
+    List<Maintenance> findByAutomobileId(Long automobileId);
+
+}

@@ -1,0 +1,52 @@
+package com.pgManagement.pgManagementEntity;
+
+import org.springframework.data.annotation.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "owner_entity")
+public class OwnerEntity {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	private String ownerName;
+	private String ownerEmail;
+	private String ownerPhoneNum;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getOwnerName() {
+		return ownerName;
+	}
+
+	public void setOwnerName(String ownerName) {
+		this.ownerName = ownerName;
+	}
+
+	public String getOwnerEmail() {
+		return ownerEmail;
+	}
+
+	public void setOwnerEmail(String ownerEmail) {
+		this.ownerEmail = ownerEmail;
+	}
+
+	public String getOwnerPhoneNum() {
+		return ownerPhoneNum;
+	}
+
+	public void setOwnerPhoneNum(String ownerPhoneNum) {
+		this.ownerPhoneNum = ownerPhoneNum;
+	}
+
+}

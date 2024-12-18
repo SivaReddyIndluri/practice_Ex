@@ -1,0 +1,9 @@
+package com.pgManagement.pgManagementService;
+
+import com.pgManagement.pgDto.OwnerDto;
+
+public interface PgManagementService {
+	
+	public OwnerEntity createOwner(OwnerDto ownerDto);
+
+}

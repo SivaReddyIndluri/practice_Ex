@@ -1,0 +1,13 @@
+spring.application.name=Customerservice
+
+server.port=8082
+spring.datasource.url=jdbc:mysql://localhost:3306/db_automobile
+spring.datasource.username=root
+spring.datasource.password=Akiakhil@1890
+
+spring.jpa.show-sql= true
+spring.jpa.hibernate.ddl-auto= update
+
+eureka.instance.leaseRenewalIntervalInSeconds=30
+eureka.instance.leaseExpirationDurationInSeconds=90
+

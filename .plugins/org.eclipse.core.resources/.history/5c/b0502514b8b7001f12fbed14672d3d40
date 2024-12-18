@@ -1,0 +1,16 @@
+package pallyTechPractice;
+
+public class InterClassMain  implements InterfaceEx{
+
+	@Override
+	public void m1() {
+
+
+		
+	}
+	public static void main(String[] args) {
+		InterClassMain f = new InterClassMain();
+		f.m3();
+	}
+
+}

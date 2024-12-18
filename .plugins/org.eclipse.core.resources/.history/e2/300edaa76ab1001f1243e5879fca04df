@@ -1,0 +1,13 @@
+package simpleProject.service;
+
+import simpleProject.dto.Employee;
+import simpleProject.entity.EmployeeEntity;
+
+public interface EmpService {
+	
+	public String createEmp(Employee employee);
+	public Employee getid(Long id);
+	public EmployeeEntity findAll();
+	public Employee updateEmpDetails(Employee employeeUpdate, Long id);
+	public String deleteId(long Id);
+}
